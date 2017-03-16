@@ -16,6 +16,7 @@
 
 package controllers;
 
+import com.google.maps.model.GeocodedWaypointStatus;
 import ninja.Result;
 import ninja.Results;
 
@@ -30,19 +31,11 @@ public class ApplicationController {
         return Results.html();
 
     }
-    
-    public Result helloWorldJson() {
-        
-        SimplePojo simplePojo = new SimplePojo();
-        simplePojo.content = "Hello World! Hello Json!";
 
-        return Results.json().render(simplePojo);
+    public Result search() {
+
+        return Results.html();
 
     }
-    
-    public static class SimplePojo {
 
-        public String content;
-        
-    }
 }
