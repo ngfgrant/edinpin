@@ -1,0 +1,69 @@
+
+li {
+  font-size: 18px;
+
+}
+
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #777;
+}
+
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+
+.panel h4 {
+  margin: 0;
+}
+
+.panel h4 a {
+  display: block;
+  background-color: white;
+  color: #337ab7;
+  padding: 0.9375em 1.25em;
+  text-decoration: none;
+}
+
+.panel h4 a:hover {
+  background: #EAF5F9;
+}
+
+.panel-padding {
+  padding: 1.25em;
+}
+
+.panel-body {
+    padding: 15px;
+    margin-left: 15px;
+}
+
+.btn-group>.btn:first-child {
+    margin-left: 0;
+    margin-top: 7px;
+}
+
+#datepicker {
+    width: 40%;
+}
+
+#select {
+    width: 60%;
+}
+
+#btn-delete {
+  height: 3.850em;
+}
+
+#btn-edit {
+  height: 3.850em;
+  width: 4.75em;
+}
+
+#accordion {
+    padding-top: 2.850em;
+}
