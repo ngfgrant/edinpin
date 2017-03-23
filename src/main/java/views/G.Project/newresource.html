@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway"/>
+
+    <title>Edinpin</title>
+  <!-- Latest compiled and minified CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Optional theme -->
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+    
+ <link rel="stylesheet" href="css/style.css">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    var date = new Date();
+    var currentMonth = date.getMonth();
+    var currentDate = date.getDate();
+    var currentYear = date.getFullYear();
+
+    $('#datepicker').datepicker({
+        minDate: new Date(currentDate, currentMonth, currentYear),
+        dateFormat: 'dd-mm-yy'
+    });
+});
+  </script>
+
+<script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">EDINPIN</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <li><a href="adminhome.html">Admin Home</a></li>
+            <li><a href="editpage.html">Edit Resources</a></li>
+            <li><a href="#">See users</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus" aria-hidden="true"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="newresource.html">Add a new resource...</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+<br>
+
+
+  <div class="container-fluid">
+      <div class="row">
+
+     <div class="col-md-8 col-md-offset-2">
+       <h2>New resource</h2>
+     </div>
+     </div>
+<br><br>
+
+<div class="row">
+ <div class="col-sm-6 col-sm-offset-3">
+
+  <label for="exampleTitle1">Category:</label>
+  <br><br>
+
+     <select class="form-control" id="select">
+  <ul class="dropdown-menu">
+    <option value="Restaurant">Restaurant&nbsp;&nbsp;<i class="fa fa-cutlery" aria-hidden="true"></i></option>
+    <option value="#">Shelter / Accommodation&nbsp;&nbsp;<i class="fa fa-bed" aria-hidden="true"></i></option>
+    <option value="#">Employment Support&nbsp;&nbsp;<i class="fa fa-suitcase" aria-hidden="true"></i></option>
+    <option value="#">Facilities / Amenities&nbsp;&nbsp;<i class="fa fa-info" aria-hidden="true"></i></option>
+    <option value="#">Public / Council Services&nbsp;&nbsp;<i class="fa fa-university" aria-hidden="true"></i></option>
+    <option value="#">Care / Health Services&nbsp;&nbsp;<i class="fa fa-heart" aria-hidden="true"></i></option>
+    <option value="#">Car sharing&nbsp;&nbsp;<i class="fa fa-car" aria-hidden="true"></i></option>
+    <option value="#">Bicycle sharing&nbsp;&nbsp;<i class="fa fa-bicycle" aria-hidden="true"></i></option>
+    <option value="#">24/7 Shop&nbsp;&nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i></option>
+    <option value="#">Spiritual / Psychological Support&nbsp;&nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i></option>
+  </ul>
+    </select>
+
+
+ <br><br><br>
+
+
+<form>
+   <div class="form-group">
+      <label for="exampleTitle1">Resource Title:</label>
+      <input type="text" class="form-control">
+  </div>
+  <div class="form-group">
+   <label for="exampleTitle1">Company name:</label>
+   <input type="text" class="form-control">
+ </div>
+
+ <div class="form-group">
+  <label for="exampleTitle1">Manager name:</label>
+  <input type="text" class="form-control">
+</div>
+
+ <div class="form-group">
+  <label for="exampleTitle1">Address:</label>
+  <input type="text" class="form-control">
+</div>
+
+<div class="form-group">
+ <label for="exampleTitle1">Postcode:</label>
+ <input type="text" pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}" class="form-control">
+</div>
+
+
+<div class="form-group">
+ <label for="exampleTitle1">Date:</label>
+ <input class="form-control" id="datepicker">
+ </div>
+
+   <br><br>
+   <div class="form-group">
+    <label for="exampleText1">Description:</label>
+    <textarea class="form-control" rows="8"></textarea>
+    </div>
+
+  <br>
+    <div class="center-block">
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Create resource</button>
+  </div>
+  </form>
+ </div>
+ </div>
+ </div>
+
+ <br><br>
+
+
+
+
+
+  </body>
+</html>

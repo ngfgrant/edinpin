@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="description" content="">
+    <meta name="author" content="">
+ 
+
+    <title>Edinpin</title>
+ 
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway"/>
+
+    <title>Edinpin</title>
+  <!-- Latest compiled and minified CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Optional theme -->
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>     
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    
+ <link rel="stylesheet" href="css/style.css"> 
+    
+    
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html"><img src="img/logo.svg" height="30px"></a>
+                </li>
+                <div class="searchMap">
+                <h3>You've searched for:</h3> <br/>
+     <form class="searchMap" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default btn-search" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form><br/><br/><br/>
+<hr>
+
+<br/>
+<h3>Here are your search results:</h3> <br/>
+
+<li> Results 1</li>
+<li>Results 2</li>
+<li>Results 3</li>
+
+<hr>
+
+<br/>
+
+
+    
+            </ul>
+        </div>
+       
+      
+<div id="map"></div>
+
+
+<a href="#menu-toggle" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-align-justify"></span></a>
+    </div>
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+  <script src="js/map.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
