@@ -149,7 +149,24 @@ margin: 20px 10px 20px 10px;
     font-size: 25px;
 }
 
+.footer {
+   padding-bottom: 20px;
+    padding-top: 20px;
+  width: 100%;
+  background-color: #333;
+    color: #FFF;
+}
 
+.footer a {
+    
+    color: #fff;
+}
+
+
+.row a {
+    
+    color: #000;
+}
 
 /* Search */
 
@@ -207,7 +224,7 @@ margin-left: 10px;
 
 }
 
-.btn-search {
+.btn-search-map {
 
 height: 44px;
 
