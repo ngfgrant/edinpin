@@ -9,8 +9,12 @@ hr {
     margin-left: 10px;
     margin-right: auto;
     border-width: 1px;
-   border-color:  #DCDCDC;
+   border-color:  #5bc0de;
 } 
+
+hr.style3 {
+    border-top: 1px dashed #8c8b8b;
+}
 
 li {
   font-size: 18px;
@@ -69,10 +73,19 @@ margin: 20px 10px 20px 10px;
 
 
 }
+
 .navbar-brand {
   font-weight: bold;
 }
 
+
+
+.center-logo {
+ margin-top: 10px;
+ margin-bottom: 20px;
+ margin-left: 70px;
+  
+}
 
 .panel h4 {
   margin: 0;
@@ -259,7 +272,7 @@ height: 44px;
     height: 100%;
     margin-left: -350px;
     overflow-y: auto;
-    background: #FAFAFA;
+    background: #FFF;
     box-shadow: 0px 10px 5px #888888;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -360,7 +373,62 @@ height: 44px;
     }
 }
 
+.info {
+    color:  #5bc0de;
+}
 
+span.glyphicon-ok{
+
+    color: #5bc0de;
+    margin: 5px;
+}
+
+
+span.glyphicon-arrow-right {
+   color: #5bc0de;
+    margin-left: 70px;
+
+}
+
+.results {
+
+margin-left: 60px;
+font-size: 18px;
+
+}
+
+.results a {
+    color: #333;
+}
+.checkbox {
+    margin-bottom: 10px;
+
+}
+
+label {
+    margin: 10px;
+    transform: scale(1.2);
+ 
+}
+
+input[type=checkbox] {
+  transform: scale(1.0);
+}
+
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after,
+.abc-checkbox input[type=checkbox]:checked + label:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+}
+ 
+input[type="checkbox"].styled:checked label:after,
+input[type="radio"].styled:checked label:after,
+.abc-checkbox label:after {
+    padding-left: 4px;
+    padding-top: 2px;
+    font-size: 9px;
+}
 
 /*------------------------
         FORM

@@ -14,11 +14,14 @@
     <title>Edinpin</title>
  
    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway"/>
 
     <title>Edinpin</title>
   <!-- Latest compiled and minified CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/build.css" rel="stylesheet">
 
 <!-- Optional theme -->
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -43,34 +46,74 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
+                <li class="center-logo pull-left">
                     <a href="index.html"><img src="img/logo.svg" height="30px"></a>
-                </li>
+                </li><br/><br/><br/>
                 <div class="searchMap">
                 <h3>You've searched for:</h3> <br/>
-     <form class="searchMap" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-            <div class="input-group-btn">
-                <button class="btn btn-default btn-search-map" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-        </form><br/><br/><br/>
+     <form id="mapForm" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" id="from" placeholder="Where are you?">
+    </div>
+  <button id="findPosition" class="btn btn-info btn-search-map hidden" title="Find my location">
+        <span class="glyphicon glyphicon-screenshot"></span>
+    </button><br/><br/>
+    <button type="submit" class="btn btn-primary">Show Directions</button>
+
+  
+</form>
+
+     <br/>
 <hr>
 
-<br/>
+
 <h3>Here are your search results:</h3> <br/>
-
-<li> Results 1</li>
-<li>Results 2</li>
-<li>Results 3</li>
-
+<dl class="text-justify results">
+ <a href="#"><dt><span class="glyphicon glyphicon-ok"></span> Results 1</dt> <dd> Edinburgh Centre <span class="glyphicon glyphicon-arrow-right info"></span></a></dd></dl> <hr class="style3">
+ <dl class="text-justify results">
+ <a href="#"><dt><span class="glyphicon glyphicon-ok"></span> Results 2</dt>
+<dd> Edinburgh Centre <span class="glyphicon glyphicon-arrow-right info"></span></a></dd></dl>
+<hr class="style3">
+ <dl class="text-justify results">
+ <a href="#"><dt><span class="glyphicon glyphicon-ok"></span> Results 3</dt>
+<dd> Edinburgh Centre <span class="glyphicon glyphicon-arrow-right info"></span></a></dd></dl>
 <hr>
 
-<br/>
 
 
-    
+<h3>Please display also: </h3>
+<form role="form-horizontal">
+ 
+  <div class="checkbox checkbox-info">
+                        <input id="checkbox1" class="styled" type="checkbox" checked>
+                        <label for="checkbox1">
+                            Hotels
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-info">
+                        <input id="checkbox2" class="styled" type="checkbox">
+                        <label for="checkbox2">
+                            Hotels
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-info">
+                        <input id="checkbox3" class="styled" type="checkbox">
+                        <label for="checkbox3">
+                           Hotels
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-info">
+                        <input id="checkbox4" class="styled" type="checkbox">
+                        <label for="checkbox4">
+                           Hotels
+                        </label>
+                    </div>
+
+
+</form>
+
+
+     
             </ul>
         </div>
        
@@ -84,7 +127,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-  <script src="js/map.js"></script>
+  <script src="js/geo-google-map.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -95,7 +138,12 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-
+<script type="text/javascript">
+    function changeState(el) {
+        if (el.readOnly) el.checked=el.readOnly=false;
+        else if (!el.checked) el.readOnly=el.indeterminate=true;
+    }
+</script>
 </body>
 
 </html>

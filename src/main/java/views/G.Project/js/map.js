@@ -32,7 +32,7 @@ jQuery(document).ready(function () {
 	]
 
     var options = {
-        zoom: 11,
+        zoom: 12,
         center:  new google.maps.LatLng(55.958347, -3.187532),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: true,
