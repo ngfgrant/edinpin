@@ -30,6 +30,18 @@ public class ApplicationController {
         return Results.html();
 
     }
+
+    public Result search() {
+
+        return Results.html();
+
+    }
+
+    public Result map() {
+
+        return Results.html();
+
+    }
     
     public Result helloWorldJson() {
         

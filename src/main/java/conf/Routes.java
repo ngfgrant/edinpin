@@ -12,7 +12,10 @@ public class Routes implements ApplicationRoutes {
     @Override
     public void init(Router router) {  
         
+
         router.GET().route("/").with(ApplicationController::index);
+        router.GET().route("/search").with(ApplicationController::search);
+        router.GET().route("/map").with(ApplicationController::map);
         router.GET().route("/hello_world.json").with(ApplicationController::helloWorldJson);
         
  
