@@ -31,6 +31,26 @@ public class ApplicationController {
         return Results.html();
 
     }
+<<<<<<< Updated upstream
+=======
+
+    public Result search() {
+
+        return Results.html();
+
+    }
+
+    public Result map() {
+
+        return Results.html();
+
+    }
+    
+    public Result helloWorldJson() {
+        
+        SimplePojo simplePojo = new SimplePojo();
+        simplePojo.content = "Hello World! Hello Json!";
+>>>>>>> Stashed changes
 
     public Result search() {
 
