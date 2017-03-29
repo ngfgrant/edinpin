@@ -16,7 +16,6 @@
 
 package controllers;
 
-import models.Test;
 import ninja.Result;
 import ninja.Results;
 
@@ -27,13 +26,8 @@ import com.google.inject.Singleton;
 public class ApplicationController {
 
     public Result index() {
-        Test test1 = new Test();
-        test1.setEmail("e");
-        test1.setText("ef");
+
         Result result = Results.html();
-
-        result.render("email", test1.getEmail());
-
         return result;
 
     }
