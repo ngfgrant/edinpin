@@ -134,6 +134,16 @@ margin: 20px 10px 20px 10px;
   width: 4.75em;
 }
 
+
+#btn-create {
+
+  
+  font-size: 1.750em;
+  color: #1371DB;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(to bottom,#fff 0,#FFFFFF 100%);
+}
+
 #accordion {
     padding-top: 2.850em;
 }
