@@ -23,28 +23,23 @@
         <![endif]-->
     </head>
     <body>
+    <#include "header.ftl.html"/>
 
-    <div class="container">
+    <#if (flash.error)??>
+        <div class="alert alert-danger">
+            ${flash.error}
+        </div>
+    </#if>
 
-        <#include "header.ftl.html"/>
+    <#if (flash.success)??>
+        <div class="alert alert-success">
+            ${flash.success}
+        </div>
+    </#if>
 
-        <#if (flash.error)??>
-            <div class="alert alert-danger">
-                ${flash.error}
-            </div>
-        </#if>
+    <#nested/>
 
-        <#if (flash.success)??>
-            <div class="alert alert-success">
-                ${flash.success}
-            </div>
-        </#if>
-
-        <#nested/>
-
-        <#include "footer.ftl.html"/>
-
-    </div>
+    <#include "footer.ftl.html"/>
     <!-- /container -->
     <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
     <script type="text/javascript" src="/assets/webjars/bootstrap/3.3.4/js/bootstrap.min.js"></script>

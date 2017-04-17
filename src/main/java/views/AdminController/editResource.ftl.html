@@ -1,271 +1,91 @@
 <#import "../layout/adminLayout.ftl.html" as layout>
-    <@layout.myLayout "Edit Resources">
+    <@layout.myLayout "Edit Resource">
 
-<div class="row">
-
-    <div class="col-md-8 col-md-offset-2">
-        <h2>Resources Manager</h2>
-
-        <br>
-
-        <div class="row" id="accordion">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Resource #1
-                            </a>
-                        </h4>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
+    <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1>Edit Resource</h1>
 
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Resource #2
-                            </a>
-                        </h4>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
+                <form action="${reverseRoute('controllers.AdminController', 'editResourceForm', 'resourceId', resource.resourceId)}"
+                      method="POST">
+                    <div class="form-group">
+                        <label for="resourceType">Category:</label>
+                        <select class="form-control" id="resourceType" name="resourceType"
+                                value="${resource.resourceType}">
+                            <option value="Restaurant">Restaurant&nbsp;&nbsp;<i class="fa fa-cutlery"
+                                                                                aria-hidden="true"></i></option>
+                            <option value="Shelter">Shelter / Accommodation&nbsp;&nbsp;<i class="fa fa-bed"
+                                                                                          aria-hidden="true"></i>
+                            </option>
+                            <option value="Employment_Support">Employment Support&nbsp;&nbsp;<i class="fa fa-suitcase"
+                                                                                                aria-hidden="true"></i>
+                            </option>
+                            <option value="Facilities">Facilities / Amenities&nbsp;&nbsp;<i class="fa fa-info"
+                                                                                            aria-hidden="true"></i>
+                            </option>
+                            <option value="Council_Services">Public / Council Services&nbsp;&nbsp;<i
+                                    class="fa fa-university" aria-hidden="true"></i></option>
+                            <option value="Health">Care / Health Services&nbsp;&nbsp;<i class="fa fa-heart"
+                                                                                        aria-hidden="true"></i></option>
+                            <option value="Car_Share">Car sharing&nbsp;&nbsp;<i class="fa fa-car"
+                                                                                aria-hidden="true"></i></option>
+                            <option value="Bicycle">Bicycle sharing&nbsp;&nbsp;<i class="fa fa-bicycle"
+                                                                                  aria-hidden="true"></i></option>
+                            <option value="247_Shop">24/7 Shop&nbsp;&nbsp;<i class="fa fa-shopping-cart"
+                                                                             aria-hidden="true"></i></option>
+                            <option value="Spiritual">Spiritual / Psychological Support&nbsp;&nbsp;<i
+                                    class="fa fa-user-plus" aria-hidden="true"></i></option>
+                        </select>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
+                    <div class="form-group">
+                        <label for="resourceTitle">Resource Title:</label>
+                        <input type="text" class="form-control" id="resourceTitle" name="resourceTitle"
+                               value="${resource.resourceTitle}">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company Name:</label>
+                        <input type="text" class="form-control" id="companyName" name="companyName"
+                               value="${resource.companyName}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="managerName">Manager Name:</label>
+                        <input type="text" class="form-control" id="managerName" name="managerName"
+                               value="${resource.managerName}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address" name="address" value="${resource.address}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postCode">Postcode:</label>
+                        <input type="text"
+                               pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}"
+                               class="form-control" id="postCode" name="postCode" value="${resource.postCode}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input class="form-control" id="date" name="date" value="${resource.date}">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" rows="8" id="description" name="description">${resource.description}</textarea>
+                    </div>
+
+                    <input class="hidden" id="id" name="id" value="${resource.resourceId}">
+
+
+                    <div class="center-block">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Edit Resource</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <br>
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Resource #3
-                            </a>
-                        </h4>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Resource #4
-                            </a>
-                        </h4>
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Resource #5
-                            </a>
-                        </h4>
-                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                Resource #6
-                            </a>
-                        </h4>
-                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                Resource #7
-                            </a>
-                        </h4>
-                        <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group"  role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                Resource #8
-                            </a>
-                        </h4>
-                        <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                Resource #9
-                            </a>
-                        </h4>
-                        <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel-group"  role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <h4>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                Resource #10
-                            </a>
-                        </h4>
-                        <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                            <div class="panel-padding">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-offset-1 col-md-3">
-                <button type="button" id="btn-delete"class="btn btn-danger">Delete</button>&nbsp;
-                <button type="button" id="btn-edit"class="btn btn-success">Edit</button>
-            </div>
-        </div>
-        <br>
-
-
     </div>
-</div>
+
 </@layout.myLayout>

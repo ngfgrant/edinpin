@@ -8,26 +8,20 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <!-- Le styles -->
-        <link href="/assets/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/custom/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/custom/awesome-bootstrap-checkbox.css" rel="stylesheet">
         <link href="/assets/css/custom/style.css" rel="stylesheet">
         <link href="/assets/css/custom/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway"/>
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="/assets/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
     <body>
-<div class="container-fluid">
-    <#include "adminHeader.ftl.html"/>
-</div>
-    <div class="container-fluid">
-
+    <div class="container">
+        <#include "adminHeader.ftl.html"/>
 
 
         <#if (flash.error)??>
@@ -43,7 +37,7 @@
         </#if>
 
         <#nested/>
-
+        <#include "adminFooter.ftl.html"/>
 
 
     </div>
