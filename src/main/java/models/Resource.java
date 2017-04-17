@@ -14,64 +14,89 @@ import javax.persistence.Id;
 public class Resource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long resourceId;
+    Long id;
 
-    private String resourceName;
-    private String resourceTypeCode;
-    private int addressID;
-    private int openingID;
-    private String resourceInfo;
+    private String resourceType;
+    private String resourceTitle;
+    private String companyName;
+    private String managerName;
+    private String address;
+    private String postCode;
+    private String date;
+    private String description;
 
-    public Resource(String resourceName, String resourceTypeCode, int addressID, int openingID, String resourceInfo) {
-        this.resourceName = resourceName;
-        this.resourceTypeCode = resourceTypeCode;
-        this.addressID = addressID;
-        this.openingID = openingID;
-        this.resourceInfo = resourceInfo;
+    public Resource() {
     }
 
     public Long getResourceId() {
-        return resourceId;
+        return id;
     }
 
-
-    public String getResourceName() {
-        return resourceName;
+    public void setResourceId(Long resourceId) {
+        this.id = resourceId;
     }
 
-    public void setResourceName(String resourceName) {
-        this.resourceName = resourceName;
+    public String getResourceType() {
+        return resourceType;
     }
 
-    public String getResourceTypeCode() {
-        return resourceTypeCode;
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
     }
 
-    public void setResourceTypeCode(String resourceTypeCode) {
-        this.resourceTypeCode = resourceTypeCode;
+    public String getResourceTitle() {
+        return resourceTitle;
     }
 
-    public int getAddressID() {
-        return addressID;
+    public void setResourceTitle(String resourceTitle) {
+        this.resourceTitle = resourceTitle;
     }
 
-    public void setAddressID(int addressID) {
-        this.addressID = addressID;
+    public String getDescription() {
+        return description;
     }
 
-    public int getOpeningID() {
-        return openingID;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setOpeningID(int openingID) {
-        this.openingID = openingID;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public String getResourceInfo() {
-        return resourceInfo;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public void setResourceInfo(String resourceInfo) {
-        this.resourceInfo = resourceInfo;
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

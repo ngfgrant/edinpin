@@ -1,0 +1,9 @@
+<#import "../layout/adminLayout.ftl.html" as layout>
+    <@layout.myLayout "Map Test Page">
+
+    <#list coordinates as item>
+        ${item.geometry.location}
+        ${item.formattedAddress}
+    </#list>
+
+</@layout.myLayout>

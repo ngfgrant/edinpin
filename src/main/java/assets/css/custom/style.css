@@ -165,6 +165,19 @@ h2 {
     color: #fff;
 }
 
+
+.adminFooter {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.adminFooter a {
+
+    color: #fff;
+}
+
 .row a {
 
     color: #000;
@@ -499,3 +512,11 @@ input[type="radio"].styled:checked label:after,
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+body > .container {
+    padding: 60px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+

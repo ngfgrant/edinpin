@@ -1,10 +1,9 @@
 <#import "../layout/adminLayout.ftl.html" as layout>
-    <@layout.myLayout "Admin Homepage">
-
+    <@layout.myLayout "View Resources">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Resources Manager</h1>
+                <h1>View Resources</h1>
                 <#list resources as item>
                     <div class="row" id="accordion">
                         <div class="col-md-8">
@@ -13,8 +12,8 @@
                                 <div class="panel panel-default">
                                     <h4>
                                         <a class="collapsed" role="button" data-toggle="collapse"
-                                           data-parent="#accordion"
-                                           href="#${item.resourceId}" aria-expanded="true" aria-controls="collapseOne">
+                                           data-parent="#accordion" href="#${item.resourceId}" aria-expanded="true"
+                                           aria-controls="collapseOne">
                                             ${item.resourceTitle}
                                         </a>
                                     </h4>

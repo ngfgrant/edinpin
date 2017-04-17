@@ -1,0 +1,38 @@
+<#import "../layout/adminLayout.ftl.html" as layout>
+    <@layout.myLayout "View Resources">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>All Users</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <#list users as item>
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.phoneNumber}</td>
+                            <td>
+                                <a href="${reverseRoute('controllers.AdminController', 'editUser', 'userId', item.id)}">
+                                    <button class="btn btn-info">Edit User</button>
+                                </a></td>
+                            <td>
+                                <a href="${reverseRoute('controllers.AdminController', 'deleteIndividualUser', 'userId', item.id)}">
+                                    <button class="btn btn-danger">Delete User</button>
+                                </a></td>
+                        </tr>
+                    </#list>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</@layout.myLayout>

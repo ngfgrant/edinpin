@@ -1,9 +1,6 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by User on 28/03/2017.
@@ -14,8 +11,25 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long addressId;
 
+    @Column(name="address")
     private String address;
+    @Column(name="city")
     private String city;
+    @Column(name="postcode")
+    private String postcode;
+
+    private int phone;
+
+    public Address(Long addressId, String address, String city, String postcode, int phone) {
+        this.addressId = addressId;
+        this.address = address;
+        this.city = city;
+        this.postcode = postcode;
+        this.phone = phone;
+    }
+
+    public Address() {
+    }
 
     public Long getAddressId() {
         return addressId;
@@ -53,14 +67,4 @@ public class Address {
         this.phone = phone;
     }
 
-    private String postcode;
-    private int phone;
-
-    public Address(Long addressId, String address, String city, String postcode, int phone) {
-        this.addressId = addressId;
-        this.address = address;
-        this.city = city;
-        this.postcode = postcode;
-        this.phone = phone;
-    }
 }

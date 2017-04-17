@@ -15,6 +15,9 @@ public class ResourceType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long resourceTypeCode;
 
+    public ResourceType() {
+    }
+
     public Long getResourceTypeCode() {
         return resourceTypeCode;
     }

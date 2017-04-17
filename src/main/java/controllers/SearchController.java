@@ -12,9 +12,5 @@ public class SearchController {
 
     }
 
-    public Result map() {
 
-        return Results.html();
-
-    }
 }
