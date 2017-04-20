@@ -2,6 +2,7 @@ package models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utility.SmsManager;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,5 +54,11 @@ public class User implements Observer {
     public void update(Observable o, Object arg) {
 
         logger.info("called");
+
+        SmsManager smsManager = new SmsManager();
+        smsManager.sendSms(this.getPhoneNumber(), "test text");
+
+        logger.info("number: " + this.getPhoneNumber() + " name: " + this.getName());
+
     }
 }

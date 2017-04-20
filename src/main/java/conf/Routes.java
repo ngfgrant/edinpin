@@ -20,6 +20,7 @@ public class Routes implements ApplicationRoutes {
         // Admin Routes
         router.GET().route("/admin/home").with(AdminController::index);
         router.GET().route("/admin/login").with(AdminController::adminLogin);
+        router.GET().route("/admin/logout").with(AdminController::logout);
 
         // Routes for resources
         router.GET().route("/setup-resources").with(ResourceController::setUpResources);

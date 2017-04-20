@@ -37,7 +37,7 @@ public class AdminController  {
         return Results.html();
     }
 
-    public Result adminLogout() {
+    public Result logout() {
         return Results.html();
     }
 
