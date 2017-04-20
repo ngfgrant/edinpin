@@ -11,8 +11,6 @@ import models.Resource;
 import ninja.Result;
 import ninja.Results;
 import ninja.jpa.UnitOfWork;
-import ninja.params.Param;
-import ninja.params.PathParam;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

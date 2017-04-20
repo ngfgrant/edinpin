@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 /**
  * Created by User on 28/03/2017.
  */
@@ -25,7 +26,19 @@ public class Resource {
     private String date;
     private String description;
 
+    public Resource(String resourceType, String resourceTitle, String companyName, String managerName, String address, String postCode, String date, String description) {
+        this.resourceType = resourceType;
+        this.resourceTitle = resourceTitle;
+        this.companyName = companyName;
+        this.managerName = managerName;
+        this.address = address;
+        this.postCode = postCode;
+        this.date = date;
+        this.description = description;
+    }
+
     public Resource() {
+
     }
 
     public Long getResourceId() {

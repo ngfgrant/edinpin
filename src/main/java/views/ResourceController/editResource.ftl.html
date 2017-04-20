@@ -6,35 +6,15 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <h1>Edit Resource</h1>
 
-                <form action="${reverseRoute('controllers.AdminController', 'editResourceForm', 'resourceId', resource.resourceId)}"
+                <form action="${reverseRoute('controllers.ResourceController', 'editResourceForm', 'resourceId', resource.resourceId)}"
                       method="POST">
                     <div class="form-group">
                         <label for="resourceType">Category:</label>
                         <select class="form-control" id="resourceType" name="resourceType"
                                 value="${resource.resourceType}">
-                            <option value="Restaurant">Restaurant&nbsp;&nbsp;<i class="fa fa-cutlery"
-                                                                                aria-hidden="true"></i></option>
-                            <option value="Shelter">Shelter / Accommodation&nbsp;&nbsp;<i class="fa fa-bed"
-                                                                                          aria-hidden="true"></i>
-                            </option>
-                            <option value="Employment_Support">Employment Support&nbsp;&nbsp;<i class="fa fa-suitcase"
-                                                                                                aria-hidden="true"></i>
-                            </option>
-                            <option value="Facilities">Facilities / Amenities&nbsp;&nbsp;<i class="fa fa-info"
-                                                                                            aria-hidden="true"></i>
-                            </option>
-                            <option value="Council_Services">Public / Council Services&nbsp;&nbsp;<i
-                                    class="fa fa-university" aria-hidden="true"></i></option>
-                            <option value="Health">Care / Health Services&nbsp;&nbsp;<i class="fa fa-heart"
-                                                                                        aria-hidden="true"></i></option>
-                            <option value="Car_Share">Car sharing&nbsp;&nbsp;<i class="fa fa-car"
-                                                                                aria-hidden="true"></i></option>
-                            <option value="Bicycle">Bicycle sharing&nbsp;&nbsp;<i class="fa fa-bicycle"
-                                                                                  aria-hidden="true"></i></option>
-                            <option value="247_Shop">24/7 Shop&nbsp;&nbsp;<i class="fa fa-shopping-cart"
-                                                                             aria-hidden="true"></i></option>
-                            <option value="Spiritual">Spiritual / Psychological Support&nbsp;&nbsp;<i
-                                    class="fa fa-user-plus" aria-hidden="true"></i></option>
+                            <#list resourceTypes as resourceType>
+                            <option value="${resourceType.name}">${resourceType.name}</option>
+                            </#list>
                         </select>
                     </div>
                     <div class="form-group">

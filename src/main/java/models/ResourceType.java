@@ -1,43 +1,53 @@
 package models;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Observable;
 
 /**
  * Created by User on 28/03/2017.
  */
 @Entity
-public class ResourceType {
+public class ResourceType extends Observable {
+    static Logger logger = LoggerFactory.getLogger(Subscription.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long resourceTypeCode;
+    Long id;
+    private String name;
+
 
     public ResourceType() {
     }
 
-    public Long getResourceTypeCode() {
-        return resourceTypeCode;
+    public Long getId() {
+        return id;
     }
 
-    public void setResourceTypeCode(Long resourceTypeCode) {
-        this.resourceTypeCode = resourceTypeCode;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getResourceCategory() {
-        return resourceCategory;
+    public String getName() {
+        return name;
     }
 
-    public void setResourceCategory(String resourceCategory) {
-        this.resourceCategory = resourceCategory;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    private String resourceCategory;
+    public ResourceType(String name) {
+        this.name = name;
+    }
 
-    public ResourceType(Long resourceTypeCode, String resourceCategory) {
-        this.resourceTypeCode = resourceTypeCode;
-        this.resourceCategory = resourceCategory;
+    public void notifySubscribers(){
+        this.setChanged();
+        this.notifyObservers();
     }
 }
+
