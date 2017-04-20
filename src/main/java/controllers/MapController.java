@@ -11,12 +11,11 @@ import models.Resource;
 import ninja.Result;
 import ninja.Results;
 import ninja.jpa.UnitOfWork;
-import ninja.params.Param;
-import ninja.params.PathParam;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,20 +28,27 @@ public class MapController {
     String apiKey = "AIzaSyATxrziUqjkKd4dNfc58IccD6n-C0kC9hQ";
     GeoApiContext context = new GeoApiContext().setApiKey(apiKey);
     @Inject
-    Provider<EntityManager> entitiyManagerProvider;
+    Provider<EntityManager> entityManagerProvider;
 
     public Result map() {
 
+        return Results.html();
+
+    }
+
+    public Result jsonResources() {
+        List<GeocodingResult[]> listOfResults = new ArrayList<>();
         GeocodingResult[] results = new GeocodingResult[10];
         for (Resource tempResource : getListOfResources()) {
             try {
                 results = GeocodingApi.geocode(context, tempResource.getAddress()).await();
+                listOfResults.add(results);
             } catch (ApiException | InterruptedException | IOException e) {
                 e.printStackTrace();
             }
         }
 
-        return Results.html().render("coordinates", results).render("apiKey", apiKey);
+        return Results.html().render("coordinates", listOfResults).json();
 
     }
 
@@ -60,7 +66,7 @@ public class MapController {
 
     @UnitOfWork
     private List<Resource> getListOfResources() {
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         Query q = entityManager.createQuery("SELECT x FROM Resource x");
         return (List<Resource>) q.getResultList();
     }

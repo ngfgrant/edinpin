@@ -1,6 +1,7 @@
 <#import "../layout/mapLayout.ftl.html" as layout>
     <@layout.myLayout "Map page">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi0kebLlnqCMLdUIaSseGuui2fzkOXTuQ"></script>
+
+
 
     <div id="wrapper">
 
@@ -90,6 +91,7 @@
 
 
         <div id="map"></div>
+        <script src="/assets/js/geo-google-map.js"></script>
 
 
         <a href="#menu-toggle" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-align-justify"></span></a>
@@ -98,7 +100,7 @@
 
     <!-- jQuery -->
     <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/geo-google-map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi0kebLlnqCMLdUIaSseGuui2fzkOXTuQ&callback=initMap"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/assets/js/bootstrap.min.js"></script>
 

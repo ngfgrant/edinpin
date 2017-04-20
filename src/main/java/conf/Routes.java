@@ -45,6 +45,7 @@ public class Routes implements ApplicationRoutes {
         // Map Routes
         router.GET().route("/map").with(MapController::map);
         router.GET().route("/map/test").with(MapController::testingGeoCoding);
+        router.GET().route("/map/json-resources").with(MapController::jsonResources);
         //router.GET().route("/map/test/{address}").with(MapController::testingGeoCoding);
 
 

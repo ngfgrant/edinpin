@@ -1,0 +1,143 @@
+{"coordinates": [
+    [
+        {
+            "addressComponents": [
+                {
+                    "longName": "10",
+                    "shortName": "10",
+                    "types": ["STREET_NUMBER"]
+                },
+                {
+                    "longName": "Colinton Road",
+                    "shortName": "Colinton Rd",
+                    "types": ["ROUTE"]
+                },
+                {
+                    "longName": "Edinburgh",
+                    "shortName": "Edinburgh",
+                    "types": ["POSTAL_TOWN"]
+                },
+                {
+                    "longName": "Edinburgh",
+                    "shortName": "Edinburgh",
+                    "types": ["ADMINISTRATIVE_AREA_LEVEL_2", "POLITICAL"]
+                },
+                {
+                    "longName": "Scotland",
+                    "shortName": "Scotland",
+                    "types": ["ADMINISTRATIVE_AREA_LEVEL_1", "POLITICAL"]
+                },
+                {
+                    "longName": "United Kingdom",
+                    "shortName": "GB",
+                    "types": ["COUNTRY", "POLITICAL"]
+                },
+                {
+                    "longName": "EH10 5DT",
+                    "shortName": "EH10 5DT",
+                    "types": ["POSTAL_CODE"]
+                }
+            ],
+            "formattedAddress": "10 Colinton Rd, Edinburgh EH10 5DT, UK",
+            "postcodeLocalities": null,
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 55.9338837,
+                        "lng": -3.2128551
+                    },
+                    "southwest": {
+                        "lat": 55.9325232,
+                        "lng": -3.2152671
+                    }
+                },
+                "location": {
+                    "lat": 55.9332035,
+                    "lng": -3.2140611
+                },
+                "locationType": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": 55.9345524302915,
+                        "lng": -3.212712119708498
+                    },
+                    "southwest": {
+                        "lat": 55.9318544697085,
+                        "lng": -3.215410080291502
+                    }
+                }
+            },
+            "types": ["PREMISE"],
+            "partialMatch": false,
+            "placeId": "ChIJr-QgSgnHh0gRCb0xt4bjwhE"
+        }
+    ],
+    [
+        {
+            "addressComponents": [
+                {
+                    "longName": "EH2 2EQ",
+                    "shortName": "EH2 2EQ",
+                    "types": ["POSTAL_CODE"]
+                },
+                {
+                    "longName": "Princes Street",
+                    "shortName": "Princes St",
+                    "types": ["ROUTE"]
+                },
+                {
+                    "longName": "Edinburgh",
+                    "shortName": "Edinburgh",
+                    "types": ["POSTAL_TOWN"]
+                },
+                {
+                    "longName": "Edinburgh",
+                    "shortName": "Edinburgh",
+                    "types": ["ADMINISTRATIVE_AREA_LEVEL_2", "POLITICAL"]
+                },
+                {
+                    "longName": "Scotland",
+                    "shortName": "Scotland",
+                    "types": ["ADMINISTRATIVE_AREA_LEVEL_1", "POLITICAL"]
+                },
+                {
+                    "longName": "United Kingdom",
+                    "shortName": "GB",
+                    "types": ["COUNTRY", "POLITICAL"]
+                }
+            ],
+            "formattedAddress": "Princes St, Edinburgh EH2 2EQ, UK",
+            "postcodeLocalities": null,
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 55.9532042,
+                        "lng": -3.1883685
+                    },
+                    "southwest": {
+                        "lat": 55.9521516,
+                        "lng": -3.190212
+                    }
+                },
+                "location": {
+                    "lat": 55.9526566,
+                    "lng": -3.189613
+                },
+                "locationType": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 55.9540268802915,
+                        "lng": -3.187941269708498
+                    },
+                    "southwest": {
+                        "lat": 55.9513289197085,
+                        "lng": -3.190639230291502
+                    }
+                }
+            },
+            "types": ["POSTAL_CODE"],
+            "partialMatch": true,
+            "placeId": "ChIJhdqjsY_Hh0gR5Wsf4AHShHw"
+        }
+    ]
+]}
