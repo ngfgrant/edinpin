@@ -202,5 +202,11 @@
             <artifactId>google-maps-services</artifactId>
             <version>0.1.20</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>(7.0,7.9)</version>
+        </dependency>
     </dependencies>
 </project>

@@ -2,13 +2,10 @@
 package conf;
 
 
-import controllers.AdminController;
-import controllers.MapController;
-import controllers.SearchController;
+import controllers.*;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
-import controllers.ApplicationController;
 
 public class Routes implements ApplicationRoutes {
 
@@ -23,14 +20,16 @@ public class Routes implements ApplicationRoutes {
         // Admin Routes
         router.GET().route("/admin/home").with(AdminController::index);
         router.GET().route("/admin/login").with(AdminController::adminLogin);
+        router.GET().route("/admin/logout").with(AdminController::logout);
 
         // Routes for resources
-        router.GET().route("/admin/view-resources").with(AdminController::viewResources);
-        router.GET().route("/admin/add-resource").with(AdminController::addResource);
-        router.GET().route("/admin/delete-resource/{resourceId}").with(AdminController::deleteIndividualResource);
-        router.GET().route("/admin/edit-resource/{resourceId}").with(AdminController::editResource);
-        router.POST().route("/admin/add-resource").with(AdminController::addResourceForm);
-        router.POST().route("/admin/edit-resource/{resourceId}").with(AdminController::editResourceForm);
+        router.GET().route("/setup-resources").with(ResourceController::setUpResources);
+        router.GET().route("/admin/view-resources").with(ResourceController::viewResources);
+        router.GET().route("/admin/add-resource").with(ResourceController::addResource);
+        router.GET().route("/admin/delete-resource/{resourceId}").with(ResourceController::deleteIndividualResource);
+        router.GET().route("/admin/edit-resource/{resourceId}").with(ResourceController::editResource);
+        router.POST().route("/admin/add-resource").with(ResourceController::addResourceForm);
+        router.POST().route("/admin/edit-resource/{resourceId}").with(ResourceController::editResourceForm);
 
 
         // User Routes
@@ -49,6 +48,9 @@ public class Routes implements ApplicationRoutes {
         //router.GET().route("/map/test/{address}").with(MapController::testingGeoCoding);
 
 
+        // Notication Routes
+        router.GET().route("/notifications").with(NotificationController::index);
+        router.POST().route("/notifications/subscribe").with(NotificationController::indexPost);
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
         ///////////////////////////////////////////////////////////////////////    

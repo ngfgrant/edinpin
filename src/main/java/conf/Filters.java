@@ -1,8 +1,9 @@
 
 package conf;
 
-import java.util.List;
 import ninja.Filter;
+
+import java.util.List;
 
 public class Filters implements ninja.application.ApplicationFilters {
 

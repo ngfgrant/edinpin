@@ -1,0 +1,4 @@
+CREATE TABLE `edinpin`.`resourceType` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `name` VARCHAR(255) NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '');
