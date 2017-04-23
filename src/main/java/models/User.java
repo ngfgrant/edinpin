@@ -52,13 +52,9 @@ public class User implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
         logger.info("called");
-
         SmsManager smsManager = new SmsManager();
-        smsManager.sendSms(this.getPhoneNumber(), "test text");
-
-        logger.info("number: " + this.getPhoneNumber() + " name: " + this.getName());
-
+        smsManager.sendSms(this.getPhoneNumber(), arg.toString());
+        logger.info("number: " + this.getPhoneNumber() + " name: " + this.getName() + " arg tostring: " + arg.toString() );
     }
 }

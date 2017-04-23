@@ -37,18 +37,20 @@ public class MapController {
     }
 
     public Result jsonResources() {
-        List<GeocodingResult[]> listOfResults = new ArrayList<>();
-        GeocodingResult[] results = new GeocodingResult[10];
+        List<Resource> listOfResources = new ArrayList<>();
         for (Resource tempResource : getListOfResources()) {
+            GeocodingResult[] results = new GeocodingResult[1];
             try {
                 results = GeocodingApi.geocode(context, tempResource.getAddress()).await();
-                listOfResults.add(results);
             } catch (ApiException | InterruptedException | IOException e) {
                 e.printStackTrace();
             }
+            tempResource.setLat(String.valueOf(results[0].geometry.location.lat));
+            tempResource.setLng(String.valueOf(results[0].geometry.location.lng));
+            listOfResources.add(tempResource);
         }
 
-        return Results.html().render("coordinates", listOfResults).json();
+        return Results.html().render("resources", listOfResources).json();
 
     }
 

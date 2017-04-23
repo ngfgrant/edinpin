@@ -24,7 +24,7 @@ import java.util.List;
 public class ResourceController {
 
     @Inject
-    Provider<EntityManager> entitiyManagerProvider;
+    Provider<EntityManager> entityManagerProvider;
 
     private static ResourceType health = new ResourceType("health");
     private static ResourceType food = new ResourceType("food");
@@ -32,7 +32,7 @@ public class ResourceController {
     public static List<ResourceType> allResourceTypes = new ArrayList<>();
     @Transactional
     public Result setUpResources() {
-        //EntityManager entityManager = entitiyManagerProvider.get();
+        //EntityManager entityManager = entityManagerProvider.get();
        // entityManager.persist(health);
        // entityManager.persist(food);
        // entityManager.persist(shelter);
@@ -44,7 +44,7 @@ public class ResourceController {
 
     @Transactional
     public Result addResource() {
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         Query q = entityManager.createQuery("SELECT x FROM ResourceType x");
         //List<ResourceType> allResourceTypes = q.getResultList();
         return Results.html().render("resourceTypes", allResourceTypes);
@@ -56,7 +56,7 @@ public class ResourceController {
     @Transactional
     public Result deleteIndividualResource(@PathParam("resourceId") String resourceId) {
         // instantiate the local entityManager
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         // Parse the id which entered as a String into Long
         Long idInt = Long.parseLong(resourceId);
         // Compose query string using JPA Query Language (http://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html)
@@ -69,7 +69,7 @@ public class ResourceController {
 
     @UnitOfWork
     public Result editResource(@PathParam("resourceId") String resourceId) {
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         Long idInt = Long.parseLong(resourceId);
         Query resourceQuery = entityManager.createQuery("SELECT x FROM Resource x WHERE x.id = :id").setParameter("id", idInt);
         Query resourceTypeQuery = entityManager.createQuery("SELECT x FROM ResourceType x");
@@ -80,7 +80,7 @@ public class ResourceController {
 
     @Transactional
     public Result editResourceForm(Resource resource) {
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         Resource tempResource = entityManager.find(Resource.class, resource.getResourceId());
         tempResource.setAddress(resource.getAddress());
         tempResource.setCompanyName(resource.getCompanyName());
@@ -101,7 +101,7 @@ public class ResourceController {
     @UnitOfWork
     public Result viewResources() {
         // Instantiate the local entityManager
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         // Compose query string using JPA Query Language (http://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html)
         Query q = entityManager.createQuery("SELECT x FROM Resource x");
         // Save the results of query to a list
@@ -112,14 +112,14 @@ public class ResourceController {
 
     @Transactional
     public Result addResourceForm(Resource resource) {
-        EntityManager entityManager = entitiyManagerProvider.get();
+        EntityManager entityManager = entityManagerProvider.get();
         entityManager.persist(resource);
         //Query resourceTypesQuery = entityManager.createQuery("SELECT x FROM ResourceType x WHERE x.name = :name").setParameter("name", resource.getResourceType());
         //ResourceType resourceType = (ResourceType) resourceTypesQuery.getSingleResult();
 
         for(ResourceType tempType : allResourceTypes){
             if(resource.getResourceType().equals(tempType.getName())){
-                tempType.notifySubscribers();
+                tempType.notifySubscribers(resource.getCompanyName() + " " + " added a new "  + resource.getResourceType() + " resource: " + resource.getResourceTitle() + " at the address: " + resource.getAddress() );
             }
         }
 

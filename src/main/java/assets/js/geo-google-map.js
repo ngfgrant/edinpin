@@ -149,26 +149,36 @@
 
 
 var markers = [];
+var infoWindowContent = [];
 
-function initMap()
-{
+function initMap() {
     var geometry, location, lat, lng;
     $.getJSON("http://localhost:8080/map/json-resources")
         .done(function (data) {
-            $.each(data, function( key, val ) {
-                console.log(val);
-                $.each(val, function( a, b ) {
-                    console.log(b);
-                    $.each(b, function( c, d ) {
-                        console.log(d.geometry.location.lat);
-                        var lat = d.geometry.location.lat;
-                        var lng = d.geometry.location.lng;
-                        var position = new google.maps.LatLng(lat, lng);
-                        markers.push(position);
-                    });
-                });
-            });
+            $.each(data, function (key, val) {
+                $.each(val, function (a, b) {
+                    console.log(b.lat);
+                    console.log(b.lng);
+                    var position = new google.maps.LatLng(b.lat, b.lng);
+                    markers.push(position);
 
+
+                    // Info Window Content
+                    infoWindowContent.push(
+                        ['<div class="info_content">' +
+                        '<h3>' + b.resourceTitle + ' - ' + b.companyName + '</h3>' +
+                        '<p>' + b.description + '</p>' +
+                        '<p>' + b.address + '</p>'
+                        + '</div>'
+                        ]
+                    )
+
+
+
+                });
+
+                console.log(infoWindowContent);
+            });
             initMaps();
 
         })
@@ -188,7 +198,7 @@ function initMaps() {
         center: mapCenter
     };
 
-    console.log("init map marker length "+ markers.length);
+    console.log("init map marker length " + markers.length);
     console.log("1");
     // Display a map on the page
     map = new google.maps.Map(document.getElementById('map'), mapOptions);

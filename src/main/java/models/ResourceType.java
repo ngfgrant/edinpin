@@ -45,9 +45,9 @@ public class ResourceType extends Observable {
         this.name = name;
     }
 
-    public void notifySubscribers(){
+    public void notifySubscribers(String message){
         this.setChanged();
-        this.notifyObservers();
+        this.notifyObservers(message);
     }
 }
 

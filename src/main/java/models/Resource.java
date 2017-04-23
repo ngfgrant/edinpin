@@ -25,6 +25,8 @@ public class Resource {
     private String postCode;
     private String date;
     private String description;
+    private String lat;
+    private String lng;
 
     public Resource(String resourceType, String resourceTitle, String companyName, String managerName, String address, String postCode, String date, String description) {
         this.resourceType = resourceType;
@@ -112,4 +114,21 @@ public class Resource {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String geocodingResult) {
+        this.lat = geocodingResult;
+    }
+
+    public String getLng() {
+        return lng;
+    }
+
+    public void setLng(String lng) {
+        this.lng = lng;
+    }
 }
+

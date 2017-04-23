@@ -46,6 +46,8 @@ public class AdminController  {
     }
 
 
+
+
     @UnitOfWork
     public Result index() {
         // Instantiate the local entityManager
@@ -106,6 +108,8 @@ public class AdminController  {
         tempUser.setPhoneNumber(user.getPhoneNumber());
         return Results.redirect("/admin/view-users");
     }
+
+
 
 }
 
